@@ -1,0 +1,19 @@
+{
+    "name": "maido",
+    "demo": "https://maido.fueko.net",
+    "version": "1.3.2",
+    "engines": {
+        "ghost-api": "v3"
+    },
+    "author": {
+        "name": "fueko",
+        "email": "hello@fueko.net",
+        "url": "https://fueko.net"
+    },
+    "keywords": [
+        "ghost-theme"
+    ],
+    "config": {
+        "posts_per_page": 8
+    }
+}
