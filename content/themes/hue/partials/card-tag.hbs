@@ -1,0 +1,24 @@
+<div class='o-grid__col o-grid__col--4-4-s o-grid__col--2-4-m o-grid__col--2-4-l o-grid__col--initial-grow c-card-tag-wrap'>
+  <div class='c-card-tag'>
+    <div class='c-card-tag__media'>
+      <a href='{{ url }}' class='c-card-tag__image-wrap'>
+        {{#if feature_image}}
+        <img class='c-card-tag__image lazyload' src='{{img_url feature_image size='l'}}'>
+        {{/if}}
+        <h2 class='c-card-tag__title'>{{ name }}
+          <span class='u-type-xs u-hidden'>({{plural count.posts empty='No episodes' singular='% episode' plural='% episodes'}} )</span>
+        </h2>
+      </a>
+    </div>
+
+    <div class='c-card-tag__content'>
+      {{#get 'posts' filter='tags:{{slug}}' limit='4' as |posts|}}
+        {{#if posts}}
+          {{#foreach posts visibility='all'}}
+            {{> teaser }}
+          {{/foreach}}
+        {{/if}}
+      {{/get}}
+    </div>
+  </div>
+</div>

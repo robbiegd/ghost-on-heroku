@@ -1,0 +1,149 @@
+/*------------------------------------*\
+  Components > Site Navigation
+\*------------------------------------*/
+
+.c-nav-wrap {
+  @include mq($until: desktop) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: $space-72;
+    background-color: $bg-color;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(.96);
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      transition: all half($global-transition) cubic-bezier(.694, 0, .335,  1);
+    }
+  }
+
+  @include mq($from: desktop) {
+    display: block;
+  }
+}
+
+.c-nav {
+  @include mq($from: desktop) {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    font-size: $type-sm;
+    font-weight: $type-500;
+    white-space: nowrap;
+
+    &:not(:last-child) {
+      @include mq($from: desktop) {
+        margin-right: $space-24;
+      }
+    }
+
+    @include mq($until: desktop) {
+      margin-bottom: $space-16;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $color-text;
+    border-bottom-color: transparent;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    transition: border-bottom-color half($global-transition) ease;
+
+    &--current {
+      border-bottom-color: $color-text;
+
+      .home-template & {
+        border-bottom-color: transparent;
+      }
+    }
+
+    @include attention() {
+      border-bottom-color: $color-text;
+    }
+  }
+
+  &__icon {
+    fill: $color-text;
+    vertical-align: middle;
+    transition: fill $global-faster-transition ease;
+
+    @include attention() {
+      fill: darken($color-text, 20%);
+    }
+  }
+}
+
+.c-nav-toggle {
+  position: absolute;
+  top: 28px;
+  right: $space-16;
+  z-index: 10;
+  height: $space-16;
+  width: $space-24;
+  cursor: pointer;
+
+  @include mq($from: tablet) {
+    right: $space-32;
+  }
+
+  @include mq($from: desktop) {
+    display: none;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    height: 1px;
+    width: $space-24;
+    background-color: $color-text;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      height: 100%;
+      background-color: inherit;
+    }
+
+    &:before { transform: translateY(16px) }
+    &:after { transform: translateY(7px); }
+
+    .c-nav-toggle--close & {
+      height: 2px;
+      background-color: transparent;
+
+      &:before,
+      &:after {
+        position: relative;
+        visibility: visible;
+        background-color: $color-text;
+      }
+
+      &:before {
+        top: 9px;
+        transform: rotate(-45deg);
+      }
+
+      &:after {
+        top: 7px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

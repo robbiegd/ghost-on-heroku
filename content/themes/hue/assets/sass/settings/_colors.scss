@@ -1,0 +1,40 @@
+// *----------------------------------*\
+//  Settings > Colors
+// *----------------------------------*/
+
+$light-mode: true !default;
+$dark-mode:  false !default;
+
+
+// Colors
+$color-brand:   #6219ff !default;
+$color-white:   #FFFFFF !default;
+$color-dark:    #1c203c !default;
+$color-text:    #1c203c !default;
+$color-gray:    #6e6e73 !default;
+$color-error:   #CD3D64 !default;
+$color-success: #09815C !default;
+
+
+// Background Colors
+$bg-color:        #FFFFFF !default;
+$bg-gray:         #F4F0EB !default;
+$bg-dark:         $color-dark !default;
+$bg-white:        $color-white !default;
+$bg-rose:         rgb(252, 208, 200) !default;
+$bg-gradient:     linear-gradient(111deg, rgba(215, 239, 244, 0), rgb(203, 235, 242)) !default;
+
+
+// Border
+$color-border: #f3ece2 !default;
+
+
+// Code Block
+$bg-code-block: $bg-gray !default;
+$bg-code-inline:  $bg-gray !default;
+$color-code-inline: $color-text !default;
+
+
+// Shadow
+$box-shadow: 0px 8px 20px rgba(80, 90, 100, 0.1) !default;
+$box-shadow-hover: 0px 8px 24px rgba(0, 0, 0, 0.1) !default;

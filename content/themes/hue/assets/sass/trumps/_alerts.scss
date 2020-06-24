@@ -1,0 +1,24 @@
+/*------------------------------------*\
+  Trumbs > Alerts
+\*------------------------------------*/
+
+.u-alert {
+  font-weight: $type-500;
+  font-size: $type-xs;
+  line-height: $type-xs-lh;
+  background: $bg-white;
+  padding: $space-8 $space-16;
+  border-radius: $global-border-radius;
+}
+
+.u-alert--success {
+  color: $color-success;
+}
+
+.u-alert--invalid {
+  color: $color-error;
+}
+
+.u-alert--error {
+  color: $color-error;
+}

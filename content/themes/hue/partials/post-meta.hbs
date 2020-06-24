@@ -1,0 +1,14 @@
+<div class='c-post-byline'>
+  {{#primary_author}}
+    <a href='{{ url }}' class='c-post-byline__author'>
+      {{#if profile_image}}
+        <div class='c-post-byline__image-wrap'>
+          <img class='c-post-byline__image lazyload' data-src='{{ img_url profile_image size='xs' }}' alt='{{ name }}'>
+        </div>
+      {{/if}}
+      {{ name }}
+    </a>
+  {{/primary_author}}
+
+  <time class='c-post-byline__date' datetime='{{ date format='YYYY-MM-DD' }}' title='{{ date format='DD MMMM YYYY' }}'>{{ date format='DD.MMM.YYYY' }}</time>
+</div>

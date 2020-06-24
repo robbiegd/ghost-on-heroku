@@ -1,0 +1,40 @@
+<div class='js-post-card-wrap c-post-card-wrap o-grid__col o-grid__col--4-4-s o-grid__col--2-4-m o-grid__col--2-4-l {{ post_class }}'>
+  <a href='{{ url }}' class='c-post-card {{#if featured}} c-post-card--featured {{/if}}'>
+    {{#if feature_image}}
+      <div class='c-post-card__media' aria-hidden='true' tabindex='-1'>
+        <img
+          alt='{{title}}'
+          class='c-post-card__image lazyload'
+          data-srcset='
+            {{ img_url feature_image size='s' }} 320w,
+            {{ img_url feature_image size='m' }} 640w,
+            {{ img_url feature_image size='l' }} 1024w
+        '
+          data-src='{{ img_url feature_image size='l' }}'
+        />
+      </div>
+    {{/if}}
+
+    <div class='c-post-card__content {{#unless feature_image}} c-post-card__content--no-image {{/unless}}'>
+      <div class='c-post-card__meta'>
+        <span class='c-post-card__number'></span>
+        <time class='c-post-card__date' datetime='{{ date format='YYYY-MM-DD' }}' title='{{ date format='DD MMMM YYYY' }}'>{{ date format='DD.MMM.YYYY' }}</time>
+
+        {{#if @labs.members}}
+          <div class='c-post-card__visibility c-post-card__visibility--{{ visibility }}'>
+            <span class='paid'>{{t 'Paid' }}</span>
+            <span class='members'>{{t 'Members' }}</span>
+            <span class='public'>{{t 'Public' }}</span>
+          </div>
+        {{/if}}
+      </div>
+
+      <h2 class='c-post-card__title'>{{ title }}</h2>
+    </div>
+  </a>
+</div>
+
+<script>
+  var posts_loop = document.querySelector('.c-loop');
+  posts_loop.style.counterReset = 'episode-number ' + (parseInt(posts_total_number) + 1);
+</script>
