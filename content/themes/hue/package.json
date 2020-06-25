@@ -1,5 +1,5 @@
 {
-  "name": "hue",
+  "name": "GiftSlackers Podcast Theme",
   "description": "Membership and Subscription Ghost 3.0 Theme",
   "demo": "http://hue.aspirethemes.com/",
   "version": "1.0.0",
@@ -53,7 +53,7 @@
     "url": "https://aspirethemes.com/"
   },
   "config": {
-    "posts_per_page": 6,
+    "posts_per_page": 12,
     "image_sizes": {
       "s": {
         "width": 176
